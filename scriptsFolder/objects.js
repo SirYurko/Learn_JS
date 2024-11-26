@@ -38,3 +38,4 @@
 // console.log(car.getCarInfo())
 // console.log("Це вінтажне авто? " + car.isVintage())
 // console.log("Рік автомобіля: " + car.carAge())
+//
