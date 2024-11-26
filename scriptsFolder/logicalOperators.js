@@ -71,16 +71,19 @@
 
 // 26.11.2024 ДОРОБИТИ
 
-// let userPasswordInput;
-// let userLoginInput;
+function registration(){
 
-// userLoginInput = prompt("Who's there?");
-//     if(userLoginInput == "Admin"){
-//          userPasswordInput = prompt("Введіть пароль");
-//             if(userPasswordInput !== "qwerty"){
-//                 alert("Не вірний пароль");
-//             }else alert("Вітаю Admin!");
-    
-//     }else alert("Мені не відомий цей користувач");
+userName = prompt("Введіть логін");
+if(userName === "Admin"){
+    pass = prompt("Введіть пароль")
+}
+else if(userName === null || userName === ''){
+    alert("Canceled");
+}
+else alert("Не відомий користувач");
 
-
+if(pass !== "qwerty"){
+    alert("Ви ввели не вірний пароль");
+}else alert("Welcome!")
+}
+// registration()
