@@ -62,3 +62,27 @@
 // }
 // book.changeAvailability();
 // console.log(book.getBookInfo())
+
+
+// -------------------------------------------------
+// 26.11.2024
+// -------------------------------------------------
+// function isEven(number) {
+//     if( number % 2 === 0){
+//         return true;
+//     }else return false;
+// }
+
+// console.log(isEven(7))
+
+// const user = {
+//     name: "Yurii",
+//     age: 22,
+//     email: "testemail@test.com",
+//     increaseAge: function() {
+//         return ++this.age;
+//     }
+// }
+
+// console.log(user.increaseAge())
+
