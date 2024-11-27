@@ -69,7 +69,7 @@ function calculatePrice(quantity, pricePerItem, discountPercent = 0) {
 // console.log(calculatePrice(1, 35000, 30));
                   
 
-// 26.11.2024 ДОРОБИТИ
+// 26.11.2024 
 
 function registration(){
 
