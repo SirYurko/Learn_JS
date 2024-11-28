@@ -9,11 +9,25 @@
 // null === +"\n0\n" false
 // ------------------------------------------------
 
-function compareValues(a, b) {
-   if(a > b){
-    return true;
-   }else return false;
-}
+// function compareValues(a, b) {
+//    if(a > b){
+//     return true;
+//    }else return false;
+   
+// }
 
-console.log(compareValues("3", 2))
-console.log(typeof(result) = "3" +2)
+// console.log(compareValues(null, undefined))
+
+// ------------------------------------------------
+
+function checkValue(x){
+
+if(x === null || x === undefined ){
+   console.log( "Помилка: значення не визначено.")
+}else if(x > 10) {
+   console.log("Значення більше 10.");
+}else{
+   console.log("Значення менше 10.");
+}
+}
+// checkValue(12);
