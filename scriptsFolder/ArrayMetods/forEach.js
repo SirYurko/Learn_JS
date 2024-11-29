@@ -38,8 +38,8 @@ const products = [              // маємо масив об'єктів
 ];
 let totalPrice = 0;                     //створюємо змінну в яку будемо додавати ціни
 products.forEach(function(product){     // викликаємо метод forEact і в функції зазначаємо product кожен елемент масиву
-    console.log(`Product: ${product.name}, Price: ${product.price}`) // виводимо ім'я та ціну
+    // console.log(`Product: ${product.name}, Price: ${product.price}`) // виводимо ім'я та ціну
     totalPrice += product.price;   // додаємо до змінної ціну кожної позиції
 })
 
-console.log("Загальна сума: " + totalPrice) // виводимо в консоль
+// console.log("Загальна сума: " + totalPrice) // виводимо в консоль
