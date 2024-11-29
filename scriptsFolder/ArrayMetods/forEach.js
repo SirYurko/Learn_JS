@@ -7,13 +7,13 @@ import  unitedMonth  from './array.js';
 //   });
 console.log(unitedMonth);
 function arrayForEachOne(){
-    let totalLength = 0;
-    unitedMonth.forEach( function (month, index){
-        console.log(`Місяць ${index + 1}: ${month}`);
-        console.log(month.length);
-        totalLength += month.length;
+    let totalLength = 0; // створюємо змінну в яку будемо записувати кількість символів в місяцях !за межами функції!
+    unitedMonth.forEach( function (month, index){   // викликаємо метод forEach>створюємо функцію для кожного місяця з масива та індекс
+        console.log(`Місяць ${index + 1}: ${month}`); // виводить в консоль "Текст ${індекс масиву} ${місяць масиву}" "в стовпчик"
+        console.log(month.length); // виводить довжину кожного слова в масиві
+        totalLength += month.length; // в змінну totalLength додаємо кількість символів з кожного місяця
     });
-    console.log("Загальна кількість символів: " + totalLength)    
+    console.log("Загальна кількість символів: " + totalLength)    // виводимо результат !за межами функції!
 }
 
 // -------------------------------------------
