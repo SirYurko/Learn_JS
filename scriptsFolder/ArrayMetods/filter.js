@@ -26,3 +26,24 @@
 // })
 
 // console.log(newNumbers)
+//-------------------------------------------------------------
+// Умова: відфільтрувати масив з isStock True
+// після цього вивести тільки ціни в консоль
+// const products = [
+//     { name: "Laptop", price: 1200, inStock: true },
+//     { name: "Phone", price: 800, inStock: false },
+//     { name: "Tablet", price: 600, inStock: true },
+//     { name: "Monitor", price: 400, inStock: true },
+//     { name: "Headphones", price: 100, inStock: false }
+//   ];
+
+//   const filteredProducts = products.filter(function(product){
+//     return product.inStock == true; // Повертаємо true або false для фільтрації
+//   })
+//   console.log(filteredProducts)
+
+//   const mapProducts = filteredProducts.map(function(product){ 
+//     return product.price; // повертає в новий масив тільки ціну
+//  })
+ 
+//  console.log(mapProducts)
