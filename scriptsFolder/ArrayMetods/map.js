@@ -64,4 +64,16 @@ const newProducts = products.map(function(product){
         stasus: product.quantity > 0 ?  "В наявності" : "Відстуній"  // Перевіряємо кількість і встановлюємо статус
     }
 })
-console.table(newProducts)
+// console.table(newProducts)
+
+//--------------------------------------------------
+
+const fullNames = ["Іван Іваненко", "Олексій Петров", "Марія Коваленко"]
+
+const shortName = fullNames.map(function(name){
+    const parts  = name.split(" ");  // Розділяємо на ["Ім'я", "Прізвище"]
+    const initial = parts[0].charAt(0);  // Беремо першу літеру імені
+    const lastName = parts[1];   // Беремо прізвище
+    return `${initial}. ${lastName}`; // Формуємо потрібний формат
+})
+console.log(shortName) // Виведе: ["І. Іваненко", "О. Петров", "М. Коваленко"]
