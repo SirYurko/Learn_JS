@@ -76,4 +76,4 @@ const shortName = fullNames.map(function(name){
     const lastName = parts[1];   // Беремо прізвище
     return `${initial}. ${lastName}`; // Формуємо потрібний формат
 })
-console.log(shortName) // Виведе: ["І. Іваненко", "О. Петров", "М. Коваленко"]
+// console.log(shortName) // Виведе: ["І. Іваненко", "О. Петров", "М. Коваленко"]
