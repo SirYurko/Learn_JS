@@ -63,3 +63,4 @@ const totalshopingList = totalPriceList.reduce(function(sum, product){
 }, 0);
 
 console.log("Загальна вартість товарів:", totalshopingList)
+
