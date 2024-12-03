@@ -83,10 +83,31 @@
 // Інакше повертає username.
 
 
-function checkLogin(username, defaultUsername) {
-    return username ?? defaultUsername;
+// function checkLogin(username, defaultUsername) {
+//     return username ?? defaultUsername;
+// }
+
+// console.log(checkLogin(null, "Guest")); // Очікується: "Guest"
+// console.log(checkLogin(undefined, "Guest")); // Очікується: "Guest"
+// console.log(checkLogin("User123", "Guest")); // Очікується: "User123"
+
+// ------------------------------------------------------------------------
+
+// function user(name, age){
+//     name = name ?? "Guest";
+//     age = age ?? "Невідомий"
+//     alert(`ВІТАЮ ${name}, вам ${age} років` )
+// }
+
+// console.log(user())
+
+// ------------------------------------------------------------------------
+
+function getContactInfo(userName, email, phone){
+    userName = userName ?? "Невідомий користувач"; // присвоюємо userName значення userName або якщо його не виявлено - "Невідомий користувач"
+    email = email ?? "Немає пошти";
+    phone = phone ?? "Немає телефону";
+    return `Користувач: ${userName}, Пошта: ${email}, Телефон: ${phone}`
 }
 
-console.log(checkLogin(null, "Guest")); // Очікується: "Guest"
-console.log(checkLogin(undefined, "Guest")); // Очікується: "Guest"
-console.log(checkLogin("User123", "Guest")); // Очікується: "User123"
+console.log(getContactInfo("Іван", "ivan@gmail.com" ))
