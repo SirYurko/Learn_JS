@@ -23,7 +23,7 @@ const numbers = [1, 2, 3, 4, 5];
 // Перевіримо, чи є в масиві хоча б одне парне число
 const hasEvenNumber = numbers.some(num => num % 2 === 0);
 
-console.log(hasEvenNumber); // true (оскільки 2 і 4 парні)
+// console.log(hasEvenNumber); // true (оскільки 2 і 4 парні)
 
 // ------------------------
 
@@ -32,7 +32,7 @@ const words = ['apple', 'banana', 'cherry'];
 // Перевіримо, чи є слово довжиною більше 6 символів
 const hasLongWord = words.some(word => word.length > 6);
 
-console.log(hasLongWord); // false (жодне слово не перевищує 6 символів)
+// console.log(hasLongWord); // false (жодне слово не перевищує 6 символів)
 
 // ------------------------------------------------------
 
@@ -47,7 +47,7 @@ const hasDiscount = products.some(function(product){
     return product.discount > 0;
 })
 
-console.log(hasDiscount)
+// console.log(hasDiscount)
 
 // ------------------------------------------------------
 
@@ -61,4 +61,18 @@ const students = [
 const newStudents = students.some(function(student){
     return student.age >= 18;
 })
-console.log(newStudents)
+// console.log(newStudents)
+
+//-------------------------------------------------------
+
+const testArray = [3, 7, 12, 5, 9];
+
+const somesArray = testArray.some(function(num){
+  return num > 10 && num % 2 === 0;
+})
+
+// console.log(somesArray)
+
+
+//---------------------------------------------
+
