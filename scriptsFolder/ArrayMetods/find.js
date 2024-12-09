@@ -13,7 +13,7 @@
 const numbers = [3, 5, 7, 8, 10];
 const evenNumbers = numbers.find(num => num % 2 === 0)
 
-console.log(evenNumbers)
+console.log(evenNumbers) // 8
 
 //--------------------------------------------------------
 
@@ -28,5 +28,5 @@ const findedBook = books.find(function(book){
     return book.author == "J.K. Rowling"
 })
 
-console.log(findedBook)
-
+console.log(findedBook) //  title: "Harry Potter and the Philosopher's Stone", author: "J.K. Rowling", year: 1997 
+ 
