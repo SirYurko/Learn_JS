@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^9.16.0"
+    "@eslint/js": "^9.16.0",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0"
   },
   "dependencies": {
     "acorn": "^8.14.0",
@@ -44,7 +46,6 @@
     "flat-cache": "^4.0.1",
     "flatted": "^3.3.2",
     "glob-parent": "^6.0.2",
-    "globals": "^14.0.0",
     "has-flag": "^4.0.0",
     "ignore": "^5.3.2",
     "import-fresh": "^3.3.0",
