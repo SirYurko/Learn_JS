@@ -15,6 +15,7 @@ export default [
     rules: {
       'no-undef': 'off', // Вимкнути правило no-undef для файлів
       'no-unused-vars': 'off', // Вимкнути правило no-unused-vars для цих файлів
+      'quotes': ["error", "single"],
     },
   },
 ];
