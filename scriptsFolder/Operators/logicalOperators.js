@@ -8,7 +8,7 @@ function isEligibleToVote(age) {
     else return ("Не можете голосувати!")
     
 }
-// console.log(isEligibleToVote(12))
+console.log(isEligibleToVote(12))
 
 // quantity = 0;               // кількість товару
     // pricePerItem = 0;           // ціна за одиницю товару
@@ -21,7 +21,7 @@ function isEligibleToVote(age) {
 
 // --------------------------------------------------------------
 
-function calculatePrice(quantity, pricePerItem, discountPercent) {
+function calculatePrice1(quantity, pricePerItem, discountPercent) {
     
     Number(quantity);               // кількість товару
     Number(pricePerItem);           // ціна за одиницю товару
@@ -36,7 +36,7 @@ function calculatePrice(quantity, pricePerItem, discountPercent) {
     }   
     return calculateTotal()
 }
-// console.log(calculatePrice(1, 35000, 30));
+console.log(calculatePrice1(1, 35000, 30));
 
 //-------------------------------------------------------
 
@@ -44,7 +44,7 @@ function calculatePrice(quantity, pricePerItem, discountPercent) {
 // це правильно
 
 
-function calculatePrice(quantity, pricePerItem, discountPercent = 0) {
+function calculatePrice2(quantity, pricePerItem, discountPercent = 0) {
     
     quantity = Number(quantity);               // кількість товару
     pricePerItem = Number(pricePerItem);           // ціна за одиницю товару
@@ -66,14 +66,14 @@ function calculatePrice(quantity, pricePerItem, discountPercent = 0) {
     }   
     return `Сума до сплати: ${calculateTotal().toFixed(2)} грн`;
 }
-// console.log(calculatePrice(1, 35000, 30));
+console.log(calculatePrice2(1, 35000, 30));
                   
 
 // 26.11.2024 
 
 function registration(){
-
-userName = prompt("Введіть логін");
+let pass;
+let userName = prompt("Введіть логін");
 if(userName === "Admin"){
     pass = prompt("Введіть пароль")
 }
@@ -86,4 +86,4 @@ if(pass !== "qwerty"){
     alert("Ви ввели не вірний пароль");
 }else alert("Welcome!")
 }
-// registration()
+registration()

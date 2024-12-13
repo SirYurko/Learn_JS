@@ -25,7 +25,7 @@ const everyProducts = products.every(function(product){
     return product.price >= 100;
 })
 
-// console.log(everyProducts)
+console.log(everyProducts)
 
 //-----------------------------------------------------
 
@@ -34,7 +34,7 @@ const everyTestArray = testArray.every(function(num){
   return num > 5;
 }) 
 
-// console.log(everyTestArray)
+console.log(everyTestArray)
 
 const testArray2 = [4, 6, 7];
 
@@ -42,6 +42,6 @@ const everyTestArray2 = testArray2.every(function(num){
   return num > 5;
 })
 
-// console.log(everyTestArray2)
+console.log(everyTestArray2)
 
 //---------------------------------------------------

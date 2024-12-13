@@ -14,6 +14,7 @@ function arrayForEachOne(){
     });
     console.log("Загальна кількість символів: " + totalLength)    // виводимо результат !за межами функції!
 }
+arrayForEachOne()
 
 // -------------------------------------------
 // створення нового масива
@@ -28,6 +29,7 @@ function arrayForEachTwo(){
     })
 console.log(unitedMonthCopy)                    // виводимо масив в консоль
 }
+arrayForEachTwo()
 // --------------------------------------------------------------------------------
 // Задача, об'єкт в масиві, потрібно взнати загальну вартість продуктів
 const products = [              // маємо масив об'єктів
@@ -42,4 +44,4 @@ products.forEach(function(product){     // викликаємо метод forEa
     totalPrice += product.price;   // додаємо до змінної ціну кожної позиції
 })
 
-// console.log("Загальна сума: " + totalPrice) // виводимо в консоль
+console.log("Загальна сума: " + totalPrice) // виводимо в консоль

@@ -28,7 +28,7 @@
 
 const testNumbers = [1, 2, 3, 4, 5]
 
-const sum1 = testNumbers.reduce(function(accumulator, currentValue, index){ // створюємо новий масив sum...
+const sum1 = testNumbers.reduce(function(accumulator, currentValue){ // створюємо новий масив sum...
     // ... і в функцію вказуємо параметри accumulator, curentValue
     return accumulator + currentValue; // Додаємо поточне значення до накопиченого
 }, 0) // Початкове значення для accumulator — 0
@@ -52,7 +52,7 @@ const sum1 = testNumbers.reduce(function(accumulator, currentValue, index){ // �
 
 // 5) 10 + 5 = 15
 
-// console.log(sum1);
+console.log(sum1);
 //-----------------------------------------------------------------------------
 //Задача: знайти середнє арифметичне масиву
 const numbers = [10, 20, 30, 40, 50];
@@ -62,4 +62,4 @@ const sum = numbers.reduce(function(accumolator, currentValue){
 // 150 сума всіх чисел
 const middleNum = sum / numbers.length; // створюємо змінну, і рахуємо середнє число
 
-// console.log(middleNum) // Виведе середнє значення (як ціле число)
+console.log(middleNum) // Виведе середнє значення (як ціле число)

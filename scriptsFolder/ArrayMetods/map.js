@@ -1,5 +1,3 @@
-import unitedMonth from "./array.js";
-
 
 // Завдання:
 // У вас є масив об’єктів, кожен із яких містить інформацію про студента:
@@ -23,7 +21,7 @@ const newStunents = students.map(function(student){
     }else if(student.average <= 75){
         return `name: ${student.name} не пройшов: ${student.average}`;}
 })
-// console.log(newStunents)
+console.log(newStunents)
 
 
 
@@ -48,7 +46,7 @@ const newsStudents = studentss.map(function(student) {
         status: student.average > 75 ? "Пройшов" : "Не пройшов"
     };
 });
-// console.table(newsStudents);
+console.table(newsStudents);
 // ------------------------------------------------
 const products = [
     { name: "Laptop", price: 1200, quantity: 5 },
@@ -64,7 +62,7 @@ const newProducts = products.map(function(product){
         stasus: product.quantity > 0 ?  "В наявності" : "Відстуній"  // Перевіряємо кількість і встановлюємо статус
     }
 })
-// console.table(newProducts)
+console.table(newProducts)
 
 //--------------------------------------------------
 
@@ -76,4 +74,4 @@ const shortName = fullNames.map(function(name){
     const lastName = parts[1];   // Беремо прізвище
     return `${initial}. ${lastName}`; // Формуємо потрібний формат
 })
-// console.log(shortName) // Виведе: ["І. Іваненко", "О. Петров", "М. Коваленко"]
+console.log(shortName) // Виведе: ["І. Іваненко", "О. Петров", "М. Коваленко"]
