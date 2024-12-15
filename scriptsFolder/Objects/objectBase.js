@@ -68,10 +68,103 @@
 //-----------------------------------
 
 
-let fruit = prompt("Які фрукти купити?", "apple");
+// let fruit = prompt("Які фрукти купити?", "apple");
 
-let bag = {
-    [fruit]: 5,
-};
+// let bag = {
+//     [fruit]: 5,
+// };
 
-alert( bag.apple );
+// alert( bag.apple );
+//-----------------------------------
+// task 
+// Привіт, object
+// важливість: 5
+// Напишіть код, виконавши завдання з кожного пункту окремим рядком:
+
+// Створіть порожній об’єкт user.
+// Додайте властивість name зі значенням Іван.
+// Додайте властивість surname зі значенням Сміт.
+// Змініть значення name на Петро.
+// Видаліть властивість name з об’єкта.
+// рішення
+
+// let user = {};
+
+// user.name = "Іван";
+// user.surname = "Сміт";
+// user.name = "Петро";
+// delete user.name
+
+//-------------------------------------
+
+// Напишіть функцію isEmpty(obj), яка повертає true, якщо об’єкт не має властивості, інакше false.
+
+// Має так працювати:
+
+// let schedule = {};
+
+// alert( isEmpty(schedule) ); // true
+
+// schedule["8:30"] = "Вставай";
+
+// alert( isEmpty(schedule) ); // false
+
+
+
+// function isEmpty(obj){
+//     for(let key in obj){
+//         return false;
+//     }
+//     return true;
+// }
+
+// for...in — підходить для простих перевірок і сумісний зі старими браузерами.
+// Object.keys() — більш сучасний підхід, читається простіше і дозволяє використовувати інші методи масивів, якщо потрібно.
+
+// function isEmpty(obj) {
+//     return Object.keys(obj).length === 0;
+//   }
+
+//----------------------------------------
+
+// let salaries = {
+//     John: 100,
+//     Ann: 160,
+//     Pete: 130
+//   }
+
+// // console.log(salaries.John + salaries.Ann + salaries.Pete)
+
+// // або 
+
+//   let sum = 0;
+//   for (let key in salaries) {
+//     sum += salaries[key];
+//   }
+  
+//   alert(sum); // 390
+
+//----------------------------------------
+// 
+// пройтись ще раз по задачкам
+
+let menu = {
+    width: 200,
+    height: 300,
+    title: "Моє меню"
+  };
+
+console.log(multiplyNumeric(menu));
+
+function multiplyNumeric(obj) {
+    for (let key in obj) {
+      if (typeof obj[key] == 'number') {
+        obj[key] *= 2;
+      }
+    }
+  }
+
+
+console.log(multiplyNumeric(menu));
+
+//------------------------------------------
