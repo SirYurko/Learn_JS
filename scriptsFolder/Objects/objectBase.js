@@ -148,23 +148,137 @@
 // 
 // пройтись ще раз по задачкам
 
-let menu = {
-    width: 200,
-    height: 300,
-    title: "Моє меню"
-  };
+// let menu = {
+//     width: 200,
+//     height: 300,
+//     title: "Моє меню"
+//   };
 
-console.log(multiplyNumeric(menu));
+// console.log(multiplyNumeric(menu));
 
-function multiplyNumeric(obj) {
-    for (let key in obj) {
-      if (typeof obj[key] == 'number') {
-        obj[key] *= 2;
-      }
-    }
-  }
+// function multiplyNumeric(obj) {
+//     for (let key in obj) {
+//       if (typeof obj[key] == 'number') {
+//         obj[key] *= 2;
+//       }
+//     }
+//   }
 
 
-console.log(multiplyNumeric(menu));
+// console.log(multiplyNumeric(menu));
 
 //------------------------------------------
+
+//practice
+//task 1
+/*
+let user = {
+  name: "Олександр",
+  age: 25,
+  isAdmin: false,
+}
+
+console.log(user)
+*/
+
+//task 2
+/*
+let car = {
+  brand: "Toyota",
+  model: "Corolla",
+}
+
+car.year = 2020;
+
+delete car.model;
+
+console.log(car)
+
+*/
+
+//task3
+
+// Завдання 3: Обчислювані властивості
+// Напиши код, який запитує у
+// користувача назву властивості та її значення, а потім додає цю властивість 
+// до об’єкта product. Початковий об’єкт виглядає так:
+/*
+let product = {
+  name: "Laptop",
+  price: 1500
+};
+
+let dreamPrice = prompt("Введіть бажану ціну")
+
+product['dreamPrice'] = dreamPrice;    // назву ключа в лапки, значення після дорівнює
+
+console.log(product)
+*/
+//task4
+// Завдання 4: Перевірка властивості
+// Створи об’єкт book із властивостями:
+
+// title — "JavaScript for Beginners".
+// author — "John Doe".
+// Перевір, чи існує властивість price у цьому об’єкті. Якщо властивість відсутня, додай її зі значенням 500.
+/*
+let book = {
+  title: "JavaScript for Beginners",
+  author: 'John Doe',
+}
+
+if(!('price' in book)){
+  book.price = 500;
+} 
+
+console.log(book)
+*/
+/*
+//task5
+let person = {
+  firstName: "Іван",
+  lastName: "Петренко",
+  age: 30,
+  isEmployed: true
+};
+
+function showKeyValue(){
+  for(let key in person){
+    console.log(key + " : " +  person[key])
+  }
+}
+showKeyValue()
+*/
+
+//Завдання 6: Підрахунок властивостей
+// Напиши функцію countProperties(obj), яка приймає об’єкт і повертає кількість його властивостей.
+// Перевір функцію на об’єкті:
+/*
+let city = {
+  name: "Київ",
+  population: 3000000,
+  country: "Україна"
+};
+
+function countProperties(obj){
+  return Object.keys(obj).length;
+}
+
+console.log(countProperties(city))
+*/
+//task7
+// Об'єднання об'єктів
+
+let user = {
+  name: "Оля",
+  age: 28
+};
+
+let additionalInfo = {
+  isAdmin: true,
+  country: "Україна"
+};
+
+const newArray = [...Object.keys(user), ...Object.keys(additionalInfo)]; 
+
+console.log(newArray)
