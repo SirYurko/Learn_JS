@@ -2,6 +2,8 @@
 // let user = new Object(); // синтаксис "конструктора об’єктів"
 // let user = {};  // синтаксис "літералу об’єкта"
 
+// const { keys } = require("prelude-ls"); з'явилось само
+
 // let user = {     // об’єкт
 //     name: "Іван",  // за ключем "name" зберігаємо значення "Іван"
 //     age: 30        // за ключем "age" зберігати значення "30"
@@ -269,16 +271,134 @@ console.log(countProperties(city))
 //task7
 // Об'єднання об'єктів
 
-let user = {
-  name: "Оля",
-  age: 28
-};
+// let user = {
+//   name: "Оля",
+//   age: 28
+// };
 
-let additionalInfo = {
-  isAdmin: true,
-  country: "Україна"
-};
+// let additionalInfo = {
+//   isAdmin: true,
+//   country: "Україна"
+// };
 
-const newArray = [...Object.keys(user), ...Object.keys(additionalInfo)]; 
+// const newArray = [...Object.keys(user), ...Object.keys(additionalInfo)]; 
 
-console.log(newArray)
+// console.log(newArray)
+
+//-------------------------------------
+//practice
+// підрахунок кількості властивостей в об'єкті
+// const user = {
+//   name: "Ivan",
+//   age: 25,
+//   country: "Ukraine",
+//   profession: "developer"
+// };
+
+// // function countKeys(obj){
+// //     return Object.keys(obj).length;
+// // }
+
+// // console.log(countKeys(user))
+
+// // або
+
+// function countKeysAndLog(obj){
+//   let count = 0;
+//   for(let key in obj){
+//     console.log("keys:", key);
+//     count++;
+//   }
+//   return count;
+// }
+// console.log(countKeysAndLog(user))
+//--------------------------------------
+// вивести тільки ту властивість яка є рядком
+// const data = {
+//   id: 123,
+//   name: "Laptop",
+//   price: 1500,
+//   available: true,
+//   details: {
+//     weight: "2kg",
+//     color: "black"
+//   }
+// };
+//   for(let key in data){
+//     if(typeof data[key] === "string"){
+//       console.log(key);
+//     }
+//   }
+// зміна булевого значення
+// const settings = {
+//   theme: "light",
+//   notifications: true,
+//   autoSave: false,
+//   language: "en"
+// };
+
+// for (let key in settings) {
+//   // Перевіряємо, чи значення є булевим
+//   if (typeof settings[key] === "boolean") {
+//     // Змінюємо значення на протилежне
+//     settings[key] = !settings[key];
+//   }
+// }
+// console.log(settings)
+//----------------------------------------
+
+// Задача 4: Пошук ключа
+// Даний об'єкт:
+
+// const scores = {
+//   Alice: 85,
+//   Bob: 92,
+//   Carol: 78,
+//   David: 90
+// };
+// Знайти ключ, значення якого найбільше.
+
+/*
+ пРАКТИКА зі зНАХОДЖЕНЯМ НАЙБІЛЬШОГО
+*/ 
+// function findTopStudent(scores) {
+//   let maxScore = -Infinity;
+//   let topStudent = "";
+
+//   for (let student in scores) {
+//     if (scores[student] > maxScore) {
+//       maxScore = scores[student];
+//       topStudent = student;
+//     }
+//   }
+
+//   return { name: topStudent, score: maxScore };
+// }
+
+// const result = findTopStudent(scores);
+// console.log(`Top student: ${result.name}, Score: ${result.score}`);
+
+// const products = {
+//   "Laptop": 1500,
+//   "Phone": 800,
+//   "Tablet": 1200,
+//   "Monitor": 300,
+//   "Keyboard": 100
+// };
+
+// function findMinPrice(){
+//   let minPrice = Infinity; // Початкове значення для мінімальної ціни
+//   let cheapestProduct = ''; // Початково немає найдешевшого продукту
+
+//   for(let product in products){
+//     if (products[product] < minPrice) { // якщо поточне значення менше minPrice (безкінечне в першій ітерації)
+//       minPrice = products[product];  // вставновлює значення для minPrice 1500 в першій ітерації
+//       cheapestProduct = product;     // також підставляє в cheapestProduct значення Laptop 
+//    // і так по циклу поки не дійде до найменшого значення
+//     }
+//   }
+// // по закіченню циклу в нас найменше значення 100, далі виводимо це 
+//   return {name: cheapestProduct, price: minPrice}
+// }
+
+// console.log(findMinPrice(products))
