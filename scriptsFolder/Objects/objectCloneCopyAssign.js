@@ -67,3 +67,84 @@
 
 // console.log(person.name)
 
+
+// створення нового об'єкту та додавання до нього інших об'єктів
+const original = {
+    a: 1,
+    b: 2,              // { a: 1, b: 2, c: 3 }
+    c: 3
+  };
+  
+  let copyObject = {d: 4} // {d: 4}
+  
+  let newObject = Object.assign({}, original, copyObject) // додаємо до нового масиву решту об'єктів
+  
+  console.log(newObject) //     { a: 1, b: 2, c: 3 d: 4 }
+  console.log(original) //      { a: 1, b: 2, c: 3 }
+  console.log(copyObject)//     {d: 4}
+  
+
+//----------------------------------------------------------------------
+// structuredClone()
+// ПРИКЛАД
+
+let user = {
+  name: "Микола",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+let clone = structuredClone(user);
+
+console.log( user.sizes === clone.sizes ); // false, різні об'єкти
+
+// user та clone тепер абсолютно не пов'язані між собою
+user.sizes.width = 60;    // тепер змінюємо властивість в одному місці
+console.log(clone.sizes.width); // 50, інше місце не пов'язане з попереднім
+
+//----------------------------------------------------------------------------
+// Використай Object.assign() для створення поверхневої копії об'єкта person і збережи його у змінну shallowCopy.
+// Змініть значення shallowCopy.job.title на "Designer".
+// Виведи на екран значення person.job.title і поясни результат.
+
+
+let person = {
+  name: "Олег",
+  age: 25,
+  job:{
+    title: "Developer",
+    company: "Google",
+  }
+};
+
+let shallowCopy = Object.assign(person);
+
+shallowCopy.job.title = "Designer";
+
+console.log(person)
+console.log(shallowCopy)
+
+// цей код виконав поверхнє копіювання, тобто властивість title змінилась на Designer у двох змінних,
+// оскільки посилання лишилось єдиним, щоб зробити глибоке копіювання потрібно використати structuredClone()
+
+//-------------------------------------------------------------------------
+
+let person2 = {
+  name: "Олег",
+  age: 25,
+  job:{
+    title: "Developer",
+    company: "Google",
+  }
+};
+
+let shallowCopy2 = structuredClone(person2); // глибоке копіювання об'єкта
+
+shallowCopy2.job.title = "Designer"; 
+
+console.log(person2);
+console.log(shallowCopy2);
+
+//----------------------------------------------------------------------------------

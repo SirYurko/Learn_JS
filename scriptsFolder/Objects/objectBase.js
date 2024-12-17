@@ -414,9 +414,14 @@ console.log(countProperties(city))
 
 // const original = {
 //   a: 1,
-//   b: 2,
+//   b: 2,              // { a: 1, b: 2, c: 3 }
 //   c: 3
 // };
 
-// ЗАКІНЧИТИ
+// let copyObject = {d: 4} // {d: 4}
 
+// Object.assign(original, copyObject) // додаємо до оригіналу другий об'єкт
+
+// console.log(original) // { a: 1, b: 2, c: 3, d: 4 }
+
+//-------------------------------------------------
