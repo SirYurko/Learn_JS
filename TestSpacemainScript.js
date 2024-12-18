@@ -122,3 +122,20 @@
 
 // --------------------------------------------------------------------------------------
 
+const person = {
+    name: "Anna", 
+    age:25,
+}
+
+console.log(person)
+
+// Функція яка перевіряє чи міститься в об'єкті ключ
+
+function hasProperty(obj, key){
+    if(key in obj){
+        return true
+    } 
+    return false;  
+}
+
+console.log(hasProperty(person, "name")) // в лапках тому що якби без то рахувало як змінну а name в нас не змінна
