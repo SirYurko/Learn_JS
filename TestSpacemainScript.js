@@ -122,20 +122,43 @@
 
 // --------------------------------------------------------------------------------------
 
-const person = {
-    name: "Anna", 
-    age:25,
-}
+// const person = {
+//     name: "Anna", 
+//     age:25,
+// }
 
-console.log(person)
+// console.log(person)
 
 // Функція яка перевіряє чи міститься в об'єкті ключ
 
-function hasProperty(obj, key){
-    if(key in obj){
-        return true
-    } 
-    return false;  
+// function hasProperty(obj, key){
+//     if(key in obj){
+//         return true
+//     } 
+//     return false;  
+// }
+
+// console.log(hasProperty(person, "name")) // в лапках тому що якби без то рахувало як змінну а name в нас не змінна
+
+let id = setInterval(my_func, 1000)
+
+let count = 0;
+
+function my_func(){
+    document.getElementById('timer').innerHTML = "Counter: " + count; 
+    count++
 }
 
-console.log(hasProperty(person, "name")) // в лапках тому що якби без то рахувало як змінну а name в нас не змінна
+function stopInterval(){
+    clearInterval(id)
+    id = null;
+}
+
+function continueInterval(){
+    if(!id){
+        id =setInterval(my_func, 1000)
+    }
+}
+
+
+console.log()
