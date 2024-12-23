@@ -77,11 +77,12 @@ const original = {
   
   let copyObject = {d: 4} // {d: 4}
   
+  // eslint-disable-next-line no-unused-vars
   let newObject = Object.assign({}, original, copyObject) // додаємо до нового масиву решту об'єктів
   
-  console.log(newObject) //     { a: 1, b: 2, c: 3 d: 4 }
-  console.log(original) //      { a: 1, b: 2, c: 3 }
-  console.log(copyObject)//     {d: 4}
+  // console.log(newObject) //     { a: 1, b: 2, c: 3 d: 4 }
+  // console.log(original) //      { a: 1, b: 2, c: 3 }
+  // console.log(copyObject)//     {d: 4}
   
 
 //----------------------------------------------------------------------
@@ -96,13 +97,14 @@ let user = {
   }
 };
 
+// eslint-disable-next-line no-unused-vars
 let clone = structuredClone(user);
 
-console.log( user.sizes === clone.sizes ); // false, різні об'єкти
+// console.log( user.sizes === clone.sizes ); // false, різні об'єкти
 
 // user та clone тепер абсолютно не пов'язані між собою
 user.sizes.width = 60;    // тепер змінюємо властивість в одному місці
-console.log(clone.sizes.width); // 50, інше місце не пов'язане з попереднім
+// console.log(clone.sizes.width); // 50, інше місце не пов'язане з попереднім
 
 //----------------------------------------------------------------------------
 // Використай Object.assign() для створення поверхневої копії об'єкта person і збережи його у змінну shallowCopy.
@@ -123,8 +125,8 @@ let shallowCopy = Object.assign(person);
 
 shallowCopy.job.title = "Designer";
 
-console.log(person)
-console.log(shallowCopy)
+// console.log(person)
+// console.log(shallowCopy)
 
 // цей код виконав поверхнє копіювання, тобто властивість title змінилась на Designer у двох змінних,
 // оскільки посилання лишилось єдиним, щоб зробити глибоке копіювання потрібно використати structuredClone()
@@ -144,7 +146,47 @@ let shallowCopy2 = structuredClone(person2); // глибоке копіюван�
 
 shallowCopy2.job.title = "Designer"; 
 
-console.log(person2);
-console.log(shallowCopy2);
+// console.log(person2);
+// console.log(shallowCopy2);
 
 //----------------------------------------------------------------------------------
+
+//practice
+
+const car1 = {
+  name: "bmw",
+  model: "serias 3",
+  year: 2012,
+  owner: "Dr. House",
+}
+
+const carUpdate = {
+  wheels: "soft",
+  ownerNumbers: 2,
+}
+
+// eslint-disable-next-line no-unused-vars
+const carNew = Object.assign({}, car1, carUpdate)
+
+// console.log(carNew)
+
+// console.log(car1)
+
+// console.log(carUpdate)
+
+// 
+
+const obj1 = {
+  name: "Car",
+  details: {
+    name: "BMW",
+    years: 2020,
+  },
+  features: ["ABS", "Airbags"],
+};
+
+const clones = structuredClone(obj1);
+
+console.log(clones)
+
+console.log(obj1)
