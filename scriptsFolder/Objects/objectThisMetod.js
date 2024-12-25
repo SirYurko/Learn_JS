@@ -1,4 +1,4 @@
-
+/* eslint-disable*/
 //-----------------------------------------------
 // Викликаємо метод this в глобальному оточені
 
@@ -93,5 +93,42 @@
   const item2 = new CreateItem('case', 1000);
   const item3 = new CreateItem('charge', 3000);
 
-  console.log(item1, item2, item3)
+  // console.log(item1, item2, item3)
   // так ми можемо створювати велику кількість об'єктів за допомогою функції конструктора
+
+  //---------------------------------------------------------------------------------
+  
+  // this в стрілкова функція
+
+  const obj = {
+    getThis1: function () {
+      console.log(this);
+    },
+    getThis2: () => {
+      console.log(this);
+    },
+  }
+
+// obj.getThis1() // взяло в якості this батьківський об'єкт (obj)
+// obj.getThis2() // взядл в якості this глобальний об'єкт (window)
+
+//- -- - - -- - -- -- - -- - - - - - - - - - - - - - - - - -- - - --
+
+const obj2 = {
+  lastName: "Ivanov",
+  firstNames: ['Petr', 'Ivan'],
+  logFullNames: function () {
+    this.firstNames.forEach(function (name) {
+      console.log(`${this.lastName} ${name}`);
+    })
+  },
+  logFullNames2: function () {
+    this.firstNames.forEach((name) => {
+      console.log(`${this.lastName} ${name}`);
+    })
+ },
+};
+
+// obj2.logFullNames()
+// obj2.logFullNames2()
+

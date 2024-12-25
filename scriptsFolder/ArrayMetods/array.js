@@ -45,22 +45,22 @@ const shoppingList = [
 const filteredList = shoppingList.filter(function(product){
     return product.price > 2;
 })
-console.log(filteredList);
+// console.log(filteredList);
 const totalPriceList = shoppingList.map(function(product){
     return {
         name: product.name,
         total: product.price * product.quantity, 
     };
 })
-console.log(totalPriceList)
+// console.log(totalPriceList)
 
 shoppingList.forEach(function(product){
-    console.log(`Назва товару: ${product.name}, Загальна вартість: ${product.price * product.quantity}`)
+    // console.log(`Назва товару: ${product.name}, Загальна вартість: ${product.price * product.quantity}`)
 })
 
 const totalshopingList = totalPriceList.reduce(function(sum, product){
     return sum + product.total;
 }, 0);
 
-console.log("Загальна вартість товарів:", totalshopingList)
+// console.log("Загальна вартість товарів:", totalshopingList)
 
