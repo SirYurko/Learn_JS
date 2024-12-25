@@ -103,3 +103,29 @@ const sayHello = function() {
 
 sayHello()
 // ми не можемо визвати функціональний вираз до того як його було створено - буде помилка
+
+//---------------------------------
+// Стрілкова функція =>
+
+const sayBye = () => {
+    console.log('Bye');
+}
+
+sayBye()
+
+// аргументів в стрілковій функції не існує, вона існує тільки у звичайній функції
+// стрілкова функція не створює власного контексту, вона немає this
+
+//- - - - - - -- - - - - - -- DSZnk));
+
+const brokenLinks = ['instagram', 'youtube', 'facebook'] // не вірні посилання
+
+const fixLinkArray = (linksArray) => {  // створюємо стрілкову функцію з параметром linksArray 
+    const correctLinks = [];            // створюємо масив в якому будуть коректні значення
+    linksArray.forEach(function(brokenLinks){ // forEach перебирає кожен елемент масиву
+        const fixedLink = 'https://' + brokenLinks + '.com'; // створюємо локальну змінну і записуємо туди нові правильні посилання
+        correctLinks.push(fixedLink) // добавляємо до масиву correctLinks нові посилання з fixedLink 
+    })
+    return correctLinks // функкція повертає коректний дані 
+}
+console.log(fixLinkArray(brokenLinks))
