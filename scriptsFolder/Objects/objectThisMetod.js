@@ -132,3 +132,40 @@ const obj2 = {
 // obj2.logFullNames()
 // obj2.logFullNames2()
 
+//-------------------------------------
+// створіть калькулятор javascript.info/object-methods
+
+// Створіть об’єкт calculator з трьома методами:
+
+// read() запитує два значення та зберігає їх як властивості об’єкта 
+// з іменами a та b відповідно.
+// sum() повертає суму збережених значень.
+// mul() множить збережені значення і повертає результат.
+
+
+const calculator = {
+  a: 0,
+  b: 0,
+
+  read: function () {
+    this.a = parseFloat(prompt("Введіть перше число"));
+    this.b = parseFloat(prompt("Введіть друге число"));
+  },
+
+  sum: function () {
+   return this.a + this.b;
+  },
+
+  mul: function () {
+    return this.a * this.b;
+  }
+
+}
+
+calculator.read()
+
+console.log("Сума:", calculator.sum());
+console.log("Добуток:", calculator.mul());
+
+
+// ще взяти практичних задачок
