@@ -144,11 +144,10 @@ const obj2 = {
 
 
 const calculator = {
-  a: 0,
-  b: 0,
+ 
 
   read: function () {
-    this.a = parseFloat(prompt("Введіть перше число"));
+    this.a = parseFloat(prompt("Введіть перше число")); // a та b створюються динамічно, тобто їм не потрібно окремо створювати
     this.b = parseFloat(prompt("Введіть друге число"));
   },
 
@@ -162,10 +161,66 @@ const calculator = {
 
 }
 
-calculator.read()
+// calculator.read()
 
-console.log("Сума:", calculator.sum());
-console.log("Добуток:", calculator.mul());
-
+// console.log("Сума:", calculator.sum());
+// console.log("Добуток:", calculator.mul());
+// console.log(calculator)
 
 // ще взяти практичних задачок
+
+//-----------------------------------------------------
+//Задача: Створити об’єкт counter
+
+const counter = {
+
+  read: function () {    // створюємо функцію яка буде записувати у властивість value(яке ми тут же створюємо динамічно) значення яке надав користувач
+    this.value = parseFloat(prompt("Початкове значення лічильника"))
+  },
+
+  increment: function () {
+    this.value = this.value + 1;
+  },
+
+  decrement: function () {
+    this.value = this.value - 1;
+  },
+
+  showValue: function () {
+    console.log(this.value)
+  }
+}
+
+// counter.read();        // Введіть початкове значення: 5
+// counter.increment();   // this.value = 5 + 1
+// counter.showValue();   // Виведе: 6
+// counter.decrement();   // this.value = 6 - 1
+// counter.showValue();   // Виведе: 5
+
+//--------------------------------------------------
+
+// Задача: Створити об’єкт userProfile
+
+const userProfile = {
+  
+  setName: function () {
+    this.name = prompt("Яке ваше ім'я");
+  },
+
+  setAge: function () {
+    this.age = parseFloat(prompt('Який ваш вік'));
+  },
+
+  incrementAge: function () {
+    this.age++;
+  },
+
+  showProfile: function () {
+    console.log(`Ім'я: ${this.name}, Вік: ${this.age}`)
+  }
+}
+
+// userProfile.setName();      // Користувач вводить, наприклад, "Олексій"
+// userProfile.setAge();       // Користувач вводить, наприклад, 25
+// userProfile.incrementAge(); // Збільшує вік на 1
+// userProfile.showProfile();  // Виведе: "Ім'я: Олексій, Вік: 26"
