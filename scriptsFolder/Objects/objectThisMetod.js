@@ -224,3 +224,70 @@ const userProfile = {
 // userProfile.setAge();       // Користувач вводить, наприклад, 25
 // userProfile.incrementAge(); // Збільшує вік на 1
 // userProfile.showProfile();  // Виведе: "Ім'я: Олексій, Вік: 26"
+
+
+
+const item = {
+  title: "Phone",
+  logTitle: function () {
+      setTimeout( () => {
+          console.log(`Product: ${this.title}`);
+      })
+  }
+}
+
+// item.logTitle()
+
+//-------------------------------------------------
+
+function greet(greeting) { 
+  console.log(`${greeting}, ${this.name}`); 
+}
+const person = { name: "Alice" };
+// greet.call(person, "Hello"); // Hello, Alice
+
+//------------------------------------------------
+// Завдання:
+// Є об'єкти, які представляють користувачів із їхніми даними. 
+// Створіть функцію, яка виводить у консоль повідомлення з ім'ям користувача
+// та його віком. Використовуйте call для виклику цієї функції в контексті різних об'єктів.
+
+
+// function showUserInfo(city, country) {
+//   console.log(`Ім'я: ${this.name}, Вік: ${this.age}, Місто: ${city}, Країна: ${country}`);
+// }
+
+// const user1 = { name: "Олексій", age: 25 };
+// const user2 = { name: "Марія", age: 30 };
+
+// // Використайте функцію showUserInfo з обома об'єктами user1 та user2, додаючи місто та країну.
+// // Ім'я: Олексій, Вік: 25, Місто: Київ, Країна: Україна
+
+// showUserInfo.call(user1, "Київ", "Україна")
+
+// showUserInfo.call(user2, "Львів", "Україна")
+
+//-----------------------------------------------------------------
+
+// Завдання: Створи функцію updateUserDetails, яка приймає додаткову інформацію про користувача (наприклад, місто та країну)
+// та оновлює відповідний об'єкт користувача, використовуючи this і метод call.
+
+// У функції має бути використаний this для доступу до властивостей об'єкта. 
+// Використай call, щоб передати об'єкт користувача та нові дані. Спробуй реалізувати це самостійно!
+
+function updateUserDetails (){
+  this.city = prompt("Введіть своє місто");
+  this.country = prompt("Введіть свою країну");
+  console.log(`Ім'я: ${this.name}, Місто: ${this.city}, Країна: ${this.country}`)
+}
+
+const personInfo = {
+  name: 'Ivan',
+  city: '',
+  country: ''
+}
+
+updateUserDetails.call(personInfo)
+
+//--------------------------------------------------
+

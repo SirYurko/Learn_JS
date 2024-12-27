@@ -129,3 +129,16 @@ const fixLinkArray = (linksArray) => {  // створюємо стрілкову
     return correctLinks // функкція повертає коректний дані 
 }
 console.log(fixLinkArray(brokenLinks))
+
+//
+// або спрощена версія (коротча)
+//
+
+const fixLinkArrayLite = (linksArray) => {  
+    const correctLinks = [];            
+    linksArray.forEach((brokenLinks) => 
+    correctLinks.push('https://' + brokenLinks + '.com'),
+    );
+    return correctLinks
+}
+
