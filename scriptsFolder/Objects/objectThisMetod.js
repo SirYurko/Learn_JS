@@ -2,6 +2,8 @@
 //-----------------------------------------------
 // Викликаємо метод this в глобальному оточені
 
+// const { max } = require("prelude-ls");
+
 // console.log(this) // виведе об'єкт Window
 
 //----------------------------------------------
@@ -143,23 +145,23 @@ const obj2 = {
 // mul() множить збережені значення і повертає результат.
 
 
-const calculator = {
+// const calculator = {
  
 
-  read: function () {
-    this.a = parseFloat(prompt("Введіть перше число")); // a та b створюються динамічно, тобто їм не потрібно окремо створювати
-    this.b = parseFloat(prompt("Введіть друге число"));
-  },
+//   read: function () {
+//     this.a = parseFloat(prompt("Введіть перше число")); // a та b створюються динамічно, тобто їм не потрібно окремо створювати
+//     this.b = parseFloat(prompt("Введіть друге число"));
+//   },
 
-  sum: function () {
-   return this.a + this.b;
-  },
+//   sum: function () {
+//    return this.a + this.b;
+//   },
 
-  mul: function () {
-    return this.a * this.b;
-  }
+//   mul: function () {
+//     return this.a * this.b;
+//   }
 
-}
+// }
 
 // calculator.read()
 
@@ -287,7 +289,60 @@ const personInfo = {
   country: ''
 }
 
-updateUserDetails.call(personInfo)
+// updateUserDetails.call(personInfo)
 
 //--------------------------------------------------
 
+// let calculator = {
+//   read: function () {
+//     this.a = parseFloat(prompt("Введіть перше значення"));
+//     this.b = parseFloat(prompt("Введіть друге значення"));
+//   },
+//   sum: function() {
+//      this.sumResult = this.a + this.b;
+//   },
+//   mul: function() {
+//      this.mulResult = this.a * this.b;
+//   }
+// }
+
+// calculator.read()
+// calculator.sum()
+// calculator.mul()
+// console.log(calculator.sumResult);
+// console.log(calculator.mulResult)
+
+//----------------------------------------------
+
+// const mathOperations = {
+//   calculateMax: function (numbers) {
+//     return Math.max.apply(null, numbers);
+//   }
+// };
+
+// let numbers = [3, 7, 1, 9, 5];
+
+// console.log(mathOperations.calculateMax(numbers))
+
+//----------------------------------------------
+// Завдання:
+// Створіть об'єкт stringHelper, який має метод longestString.
+// Цей метод повинен знаходити найдовший рядок у масиві рядків.
+
+let strings = ["apple", "banana", "cherry", "pineapple"];
+
+const stringHelper = {
+
+  longestString: function (strings) {  
+    let lengths = strings.map(str => str.length); // Отримуємо масив довжин рядків
+    let maxLength = Math.max.apply(null, lengths); // Знаходимо максимальну довжину
+    let longest = strings[lengths.indexOf(maxLength)]; // Знаходимо рядок з цією довжиною
+    return longest;
+  },
+
+}
+
+console.log(strings);
+console.log(stringHelper.longestString(strings))
+
+//------------------------------------------------
