@@ -342,7 +342,23 @@ const stringHelper = {
 
 }
 
-console.log(strings);
-console.log(stringHelper.longestString(strings))
+// console.log(strings);
+// console.log(stringHelper.longestString(strings))
 
 //------------------------------------------------
+function sumArray(arr) {
+  return arr.reduce((acc, num) => acc + num, 0);
+}
+
+
+let numbers = [10, 20, 30, 40];
+const numberHelper = {
+  findAverage: function(numbers) {
+  let totalNum = sumA(numbers)
+    console.log(totalNum)
+}
+}
+
+numberHelper.findAverage()
+
+// переробити і доробити
