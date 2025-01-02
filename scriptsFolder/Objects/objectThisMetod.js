@@ -424,33 +424,4 @@ const calculator = {
 // Усі методи (окрім showInvoice) повинні підтримувати ланцюг викликів.
 // practice gpt
 
-const invoice = {
-  
-  item: [],
-
-  addItem: function (name, price) {
-    this.item.push({name, price});
-    return this;
-  },
-
-  applyDiscount(discout){
-    this.item.price = this.item.price * (1 - discout / 100)
-    return this;
-  },
-
-  applyTax(tax){
-    this.item.price = this.item.price * (1+ tax / 100);
-    return this;
-  },
-
-  removeItem(name){
-
-  },
-
-  showInvoice(){
-    console.log(this.item)
-    
-  }
-}
-
-invoice.addItem("Laptop", 1000).addItem("Mouse", 50).applyDiscount(10).applyTax(5).showInvoice();
+// доробити
