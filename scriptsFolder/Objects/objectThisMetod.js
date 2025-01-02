@@ -2,6 +2,7 @@
 //-----------------------------------------------
 // Викликаємо метод this в глобальному оточені
 
+
 // const { max } = require("prelude-ls");
 
 // console.log(this) // виведе об'єкт Window
@@ -346,19 +347,110 @@ const stringHelper = {
 // console.log(stringHelper.longestString(strings))
 
 //------------------------------------------------
-function sumArray(arr) {
-  return arr.reduce((acc, num) => acc + num, 0);
+
+//javascriptInfo
+
+// let ladder = {
+//   step: 0,
+//   up() {
+//     this.step++;
+//     return this;
+//   },
+//   down() {
+//     this.step--;
+//     return this;
+//   },
+//   showStep: function() { // показує поточний крок
+//     alert( this.step );
+//     return this;
+//   }
+// };
+
+
+// ladder.up().up().down().showStep().down().showStep();
+
+//practice
+
+const calculator = {
+  
+  value: 0,
+
+  add: function (n){
+     this.value += n;
+     return this;
+  },
+
+  subtract: function (n) {
+    this.value -= n;
+    return this;
+  },
+
+  multiply: function(n){
+    this.value *= n;
+    return this;
+  },
+
+  divide: function(n){
+    if(n === 0){
+      console.error("Число не може ділитись на 0")
+    }else this.value /= n;
+    return this;
+  },
+
+  reset: function(n){
+  this.value = 0;
+  return this;
+  },
+
+  show: function(){
+    console.log(this.value);
+    return this;
+  }
 }
 
+// calculator.add(10).multiply(2).subtract(5).show().divide(3).show().reset().show();
 
-let numbers = [10, 20, 30, 40];
-const numberHelper = {
-  findAverage: function(numbers) {
-  let totalNum = sumA(numbers)
-    console.log(totalNum)
+//----------------------------------------------------------
+// Завдання: Реалізувати об'єкт invoice для виставлення рахунків
+// Вимоги:
+// Об'єкт invoice повинен мати такі методи:
+
+// addItem(name, price) — додає товар або послугу до рахунку, де name — назва товару, а price — його ціна.
+// applyDiscount(discount) — застосовує знижку до загальної суми рахунку (від 0 до 100).
+// applyTax(tax) — додає податок до рахунку (в процентах).
+// removeItem(name) — видаляє товар або послугу з рахунку за назвою.
+// showInvoice() — виводить інформацію про всі додані товари, знижки, податки та загальну суму.
+// resetInvoice() — скидає всі товари та суми до початкових значень.
+// Усі методи (окрім showInvoice) повинні підтримувати ланцюг викликів.
+// practice gpt
+
+const invoice = {
+  
+  item: [],
+
+  addItem: function (name, price) {
+    this.item.push({name, price});
+    return this;
+  },
+
+  applyDiscount(discout){
+    this.item.price = this.item.price * (1 - discout / 100)
+    return this;
+  },
+
+  applyTax(tax){
+    this.item.price = this.item.price * (1+ tax / 100);
+    return this;
+  },
+
+  removeItem(name){
+
+  },
+
+  showInvoice(){
+    console.log(this.item)
+    
+  }
 }
-}
 
-numberHelper.findAverage()
-
-// переробити і доробити
+invoice.addItem("Laptop", 1000).addItem("Mouse", 50).applyDiscount(10).applyTax(5).showInvoice();
