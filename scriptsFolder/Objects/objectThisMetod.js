@@ -425,3 +425,54 @@ const calculator = {
 // practice gpt
 
 // доробити
+
+//----------------------------------------------------------------------------
+
+// КОНСТРУКТОРИ, ОПЕРАТОРА "new"
+
+function Book(title, author, year) {
+  this.title = title;
+  this.author = author;
+  this.year = year;
+
+  Book.allBooks.push(this)
+}
+
+Book.allBooks = [];
+
+let book1 = new Book('1984', "Джордж Орвелл", 1949)
+let book2 = new Book("Маленький принц", "Антуан де Сент-Екзюпері", 1943);
+let book3 = new Book("Війна і мир", "Лев Толстой", 1869);
+
+Book.allBooks.forEach((book, index) => {
+  // console.log(`${index + 1}. ${book.title} (${book.year}) - ${book.author}`);
+})
+
+//- - - - -- - - - - - - - - - - - - - - - - - - - -- - -- -
+// За допомогою функції-конструктора можна створювати об'єкти з певними властивостями. 
+// Коли ви викликаєте функцію-конструктор за допомогою оператора new, 
+// вона створює новий об'єкт і ініціалізує його властивості на основі переданих аргументів.
+
+function Car(brand, model, year) {
+  this.brand = brand;
+  this.model = model;
+  this.year = year;
+  this.isRunning = false;
+
+  this.start = function(){
+    this.isRunning = true;
+    console.log("Автомобіль запущено");
+  };
+  
+  this.stop = function(){
+    this.isRunning = false;
+    console.log('Автомобіль зупинено')
+  }
+}
+
+let car1 = new Car('Toyota', "Corolla", 2010)
+let car2 = new Car('Tesla', "Model S", 2022)
+
+
+car1.start();
+console.log(car1.isRunning)
