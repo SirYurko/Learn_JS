@@ -76,34 +76,34 @@
 // Виклики методів increment змінюють цю змінну,
 // і обидва лічильники бачать однакове значення.
 
-let counterValue = 0;
+// let counterValue = 0;
 
-function CounterA() {
-    this.increment = function() {
-        counterValue++;
-    };
+// function CounterA() {
+//     this.increment = function() {
+//         counterValue++;
+//     };
 
-    this.getValue = function() {
-        return counterValue;
-    };
+//     this.getValue = function() {
+//         return counterValue;
+//     };
     
-}
+// }
 
-function CounterB() {
-    this.increment = function() {
-        counterValue++;
-    };
+// function CounterB() {
+//     this.increment = function() {
+//         counterValue++;
+//     };
 
-    this.getValue = function() {
-        return counterValue;
-    };
-}
+//     this.getValue = function() {
+//         return counterValue;
+//     };
+// }
 
-let counter1 = new CounterA();
-let counter2 = new CounterB();
+// let counter1 = new CounterA();
+// let counter2 = new CounterB();
 
-counter1.increment();
-counter1.increment();
+// counter1.increment();
+// counter1.increment();
 
 // console.log(counter1.getValue())
 // console.log(counter2.getValue())
@@ -111,12 +111,31 @@ counter1.increment();
 // console.log(counter1)
 // - - - - - - - - - - - - - - - - - - - -
 
+// Створити Калькулятор за допомогою конструктора
+// Створіть функцію-конструктор Calculator
+
 function Calculator(){
-    this.a = '';
-    this.b = '';
     this.read = function (){
-        a = parseFloat(prompt("Введіть значення a"));
-        b = parseFloat(prompt("Введіть значення b"));
+        this.a = parseFloat(prompt("Введіть значення a"));
+        this.b = parseFloat(prompt("Введіть значення b"));
+    };
+    this.sum = function (){
+        return this.a + this.b;
+    };
+
+    this.mul = function (){
+        return this.a * this.b;
     }
 }
+
+// eslint-disable-next-line no-unused-vars
+let calculator = new Calculator();
+
+// calculator.read();
+
+// alert( "sum=" + calculator.sum() );
+
+
+//----------------------------------------------------------
+
 
