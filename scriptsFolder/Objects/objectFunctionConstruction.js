@@ -1,6 +1,7 @@
 // /* eslint-disable*/
 // // КОНСТРУКТОРИ, ОПЕРАТОРА "new"
 
+
 // const { Controller } = require("estraverse");
 
 // function Book(title, author, year) {
@@ -139,3 +140,29 @@ let calculator = new Calculator();
 //----------------------------------------------------------
 
 
+function Accumulator(startValue){
+    this.value = startValue;
+
+    this.read = function (){
+        let userInput;
+        do{
+            userInput = prompt("");
+        if(userInput == null){
+            alert('Введення скасовано');
+            return;
+        }
+        
+        userInput = parseFloat(userInput)
+
+    }while (isNaN(userInput));
+    
+    this.value += userInput;
+}
+
+}
+
+let accumulator = new Accumulator(10);
+
+accumulator.read(); // Користувач вводить 5 через prompt
+accumulator.read(); // Користувач вводить 3 через prompt
+console.log(accumulator.value); // Виведе 18 (10 + 5 + 3)
