@@ -37,7 +37,7 @@ const user = {
 
 // Перебір звичайних властивостей
 for(let key in user){
-    // console.log(`${key}: ${user[key]}`) // Виведе лише name і age
+    console.log(`${key}: ${user[key]}`) // Виведе лише name і age
 }
 
 // Доступ до прихованих властивостей
