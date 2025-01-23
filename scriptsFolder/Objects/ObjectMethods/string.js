@@ -97,15 +97,84 @@
 // Щоб знайти усі збіги, нам потрібно запустити indexOf в циклі.
 // Кожен новий виклик здійснюється з позицією після попереднього збігу:
 
-let str = 'Хитрий, як лисиця, сильний як Як';
+// let str = 'Хитрий, як лисиця, сильний як Як';
 
-let target = 'як';  // давайте знайдемо це
+// let target = 'як';  // давайте знайдемо це
 
+// let pos = 0;
+// while(true){
+//     let foundPos = str.indexOf(target, pos);
+//     if (foundPos == -1) break;
+
+//     alert(`Знайдено тут: ${foundPos}` );
+//     pos = foundPos + 1; // продовжуємо з наступної позиції
+// }
+
+
+// - -- - - - -- - - - - - -- 
+/*  Пошук ключових слів is
+let str = 'This is a test. Is it working as it is supposed to?';
+
+let target = 'is';
+let lowerStr = str.toLocaleLowerCase(); // створюємо нову змінну щоб оригінал не змінився
+target = target.toLocaleLowerCase(); // переводимо також targert in LowerCase
 let pos = 0;
+
+// Цикл для пошуку всіх входжень підрядка target у lowerStr
 while(true){
-    let foundPos = str.indexOf(target, pos);
+    // Шукаємо підрядок target, починаючи з позиції pos
+    let foundPos = lowerStr.indexOf(target, pos);
+
+    // Якщо підрядок не знайдено (indexOf повертає -1), виходимо з циклу
     if (foundPos == -1) break;
 
-    alert(`Знайдено тут: ${foundPos}` );
-    pos = foundPos + 1; // продовжуємо з наступної позиції
+    console.log( `Знайдено тут: ${foundPos}` ); 
+    
+    // Оновлюємо позицію для пошуку, щоб почати з наступного символу
+    pos = foundPos + 1;
 }
+
+console.log(str) //  'This is a test. Is it working as it is supposed to?'
+*/
+//---------------------
+
+/* задачка від gpt Пошук ключових слів
+let str = 'Apple is sweet, but apple pie is even sweeter. I love apple juice.';
+let target = 'apple';
+
+let lowerStr = str.toLocaleLowerCase();
+let pos = -1;
+while((pos = lowerStr.indexOf(target, pos + 1)) != -1){
+    console.log(`Знайдений індекс: ${pos} `)
+}
+*/
+
+// перевірка за допомогою if 
+// let str = "Віджет з ідентифікатором";
+
+// if (str.indexOf("Віджет") != -1) {
+//     alert("Є співпадіння"); // тепер працює!
+// }
+
+//---------------------------
+
+// includes, startsWith, endsWith
+// Сучасніший метод str.includes(substr, pos) повертає true/false в залежності від того чи є substr в рядку str
+// Цей метод доцільно використовувати, коли потрібно перевірити чи є збіг, але не потрібна позиція:
+
+alert( "Віджет з ідентифікатором".includes("Віджет") ); // true
+
+alert( "Привіт".includes("Бувай") ); //false
+
+// Необовʼязковий другий аргумент pos – це позиція з якої почнеться пошук:
+
+alert( 'віджет'.includes("ід")) //true
+
+alert( 'віджет'.includes('ід', 3)) // false, починаючи з 3-го символа, підрядка "ід" немає
+
+// Відповідно, методи str.startsWith та str.endsWith перевіряють,
+// чи починається і чи закінчується рядок певним підрядком.
+
+alert("віджет".startsWith('від')); // true, 'віджет' починається з 'від'
+
+alert("віджет".endsWith("жет")); // true, "віджет" закінчується підрядком "жет"
