@@ -112,30 +112,30 @@
 
 
 // - -- - - - -- - - - - - -- 
-/*  Пошук ключових слів is
-let str = 'This is a test. Is it working as it is supposed to?';
+//   Пошук ключових слів is
+// let str = 'This is a test. Is it working as it is supposed to?';
 
-let target = 'is';
-let lowerStr = str.toLocaleLowerCase(); // створюємо нову змінну щоб оригінал не змінився
-target = target.toLocaleLowerCase(); // переводимо також targert in LowerCase
-let pos = 0;
+// let target = 'is';
+// let lowerStr = str.toLocaleLowerCase(); // створюємо нову змінну щоб оригінал не змінився
+// target = target.toLocaleLowerCase(); // переводимо також targert in LowerCase
+// let pos = 0;
 
-// Цикл для пошуку всіх входжень підрядка target у lowerStr
-while(true){
-    // Шукаємо підрядок target, починаючи з позиції pos
-    let foundPos = lowerStr.indexOf(target, pos);
+// // Цикл для пошуку всіх входжень підрядка target у lowerStr
+// while(true){
+//     // Шукаємо підрядок target, починаючи з позиції pos
+//     let foundPos = lowerStr.indexOf(target, pos);
 
-    // Якщо підрядок не знайдено (indexOf повертає -1), виходимо з циклу
-    if (foundPos == -1) break;
+//     // Якщо підрядок не знайдено (indexOf повертає -1), виходимо з циклу
+//     if (foundPos == -1) break;
 
-    console.log( `Знайдено тут: ${foundPos}` ); 
+//     console.log( `Знайдено тут: ${foundPos}` ); 
     
-    // Оновлюємо позицію для пошуку, щоб почати з наступного символу
-    pos = foundPos + 1;
-}
+//     // Оновлюємо позицію для пошуку, щоб почати з наступного символу
+//     pos = foundPos + 1;
+// }
 
-console.log(str) //  'This is a test. Is it working as it is supposed to?'
-*/
+// console.log(str) //  'This is a test. Is it working as it is supposed to?'
+
 //---------------------
 
 /* задачка від gpt Пошук ключових слів
@@ -222,5 +222,41 @@ while((pos = lowerStr.indexOf(target, pos + 1)) != -1){
 // Повертає частину рядка з позиції start, із заданою довжиною length.
 
 // На відміну від попередніх методів, цей дозволяє вказати довжину length замість кінцевої позиції:
-let str = 'stringify';
-alert( str.substring(2, 4)) // 'gi'
+// let str = 'stringify';
+// alert( str.substring(2, 4)) // 'gi'
+
+// - - - - - - - -- - - - - - -
+// task
+
+// function ucFirst(str) {
+//    if(!str) return str; 
+//    return str[0].toUpperCase() + str.slice(1);
+// }
+// console.log(ucFirst('hello'))
+
+//------
+
+// function checkSpam(str) {
+//     let target = 'XXX';
+//     let lowerStr = str.toLocaleLowerCase();
+//     target = target.toLocaleLowerCase();
+//     let pos = 0;
+
+//     if(lowerStr.indexOf(target) !== -1){
+//         return true;
+//     }
+//     return false;
+// }
+
+
+// console.log(checkSpam('free xxxxx'))
+
+// або з методом includes
+
+// function checkSpam2(str){
+//     let lowerStr = str.toLowerCase();
+
+//     return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+// }
+
+// console.log(checkSpam2("xxx"))
