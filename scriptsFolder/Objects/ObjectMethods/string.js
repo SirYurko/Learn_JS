@@ -1,5 +1,4 @@
-/* eslint-disable */
-
+ 
 // let single = 'одинарні-лапки';
 // let double = "подвійні-лапки";
 
@@ -260,3 +259,5 @@ while((pos = lowerStr.indexOf(target, pos + 1)) != -1){
 // }
 
 // console.log(checkSpam2("xxx"))
+
+//--------------------

@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 // const basket = {
 //     Laptop: 1500,
 //     Keyboard: 100,
@@ -140,25 +142,68 @@
 
 // console.log(hasProperty(person, "name")) // в лапках тому що якби без то рахувало як змінну а name в нас не змінна
 
-let id = setInterval(my_func, 1000)
+// let id = setInterval(my_func, 1000)
 
-let count = 0;
+// let count = 0;
 
-function my_func(){
-    document.getElementById('timer').innerHTML = "Counter: " + count; 
-    count++
-}
+// function my_func(){
+//     document.getElementById('timer').innerHTML = "Counter: " + count; 
+//     count++
+// }
 
-function stopInterval(){
-    clearInterval(id)
-    id = null;
-}
+// function stopInterval(){
+//     clearInterval(id)
+//     id = null;
+// }
 
-function continueInterval(){
-    if(!id){
-        id =setInterval(my_func, 1000)
+// function continueInterval(){
+//     if(!id){
+//         id =setInterval(my_func, 1000)
+//     }
+// }
+
+
+// console.log()
+
+
+setInterval(function () {
+    let date = new Date();
+    let time = "Час: " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    document.getElementById('time').innerText = time ;
+}, 1000)
+
+let arr = [9, 2, 5, 'Some', true];
+
+console.log(arr.sort())
+console.log(arr.sort().reverse())
+
+// let user = prompt("Enter films: ");
+// let films = user.split(',');
+// console.log(films.join('-'))
+
+class Person {
+    name = ''
+    age = 0
+    bio = ''
+
+    constructor(name, age, bio){
+        this.name = name;
+        this.age = age;
+        this.bio = bio;
+    }
+
+    info(){
+        console.log('Людина: ' + this.name + ". Вік: " + this.age + ". Bio: " + this.bio);
     }
 }
 
+let alex = new Person('Alex', 25, 'Some Bio'); // скорочений варіант завдяки консруктору
 
-console.log()
+
+let bob = new Person(); // без консруктора
+bob.name = "Bob";
+bob.age = '26';
+bob.bio = 'Some bio2';
+
+alex.info()
+bob.info()
