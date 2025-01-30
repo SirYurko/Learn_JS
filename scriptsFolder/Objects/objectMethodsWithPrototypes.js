@@ -75,7 +75,31 @@ function checkProperty(obj, key) { // перевірка чи є в person вл�
     return Object.hasOwn(obj, key)
 }
 
-console.log(checkProperty(person, "name")); // true
-console.log(checkProperty(person, "toString")); // false (успадковано)
-console.log(checkProperty(person, "age")); // true
-console.log(checkProperty(person, "height")); // false (немає такої властивості)
+// console.log(checkProperty(person, "name")); // true
+// console.log(checkProperty(person, "toString")); // false (успадковано)
+// console.log(checkProperty(person, "age")); // true
+// console.log(checkProperty(person, "height")); // false (немає такої властивості)
+
+//---------------------------------
+
+// console.log(Object.getOwnPropertyNames(person)) // повертає масив властивостей об'єкта [name, age]
+
+// -------------------------------
+
+const Person2 = {
+    greet() {
+        console.log("Hello!");
+    }
+};
+
+const user = Object.create(Person2) // створюємо об'єкт user з прототипом Person2
+
+
+// Метод Object.getPrototypeOf(obj) повертає прототип (батьківський об'єкт) переданого об'єкта.
+console.log(Object.getPrototypeOf(user)) // // Виведе: { greet: [Function: greet] }
+console.log(Object.getPrototypeOf(user) === Person2); // true
+
+user.greet() // "Hello", метод успадковується від Person
+
+console.log(user)
+
