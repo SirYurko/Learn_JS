@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import  unitedMonth  from './array.js';
 
 // Синтаксис forEach
